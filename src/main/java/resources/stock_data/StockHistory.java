@@ -1,6 +1,6 @@
-package database.stock_data;
+package resources.stock_data;
 
-import database.BaseTable;
+import resources.BaseTable;
 import io.katharsis.resource.annotations.JsonApiRelation;
 import io.katharsis.resource.annotations.JsonApiResource;
 import io.katharsis.resource.annotations.LookupIncludeBehavior;

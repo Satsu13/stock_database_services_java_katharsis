@@ -1,6 +1,6 @@
-package database.model_data;
+package resources.model_data;
 
-import database.BaseTable;
+import resources.BaseTable;
 import io.katharsis.resource.annotations.JsonApiResource;
 
 @JsonApiResource(type = "mature-investments")

@@ -1,6 +1,6 @@
-package database.data;
+package resources.data;
 
-import database.BaseTable;
+import resources.BaseTable;
 import io.katharsis.resource.annotations.JsonApiResource;
 
 @JsonApiResource(type = "parameters")

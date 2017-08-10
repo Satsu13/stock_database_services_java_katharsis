@@ -1,4 +1,4 @@
-package database;
+package resources;
 
 import io.katharsis.resource.annotations.JsonApiId;
 
