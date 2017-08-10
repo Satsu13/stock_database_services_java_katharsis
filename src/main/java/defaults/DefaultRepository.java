@@ -4,22 +4,29 @@ import io.katharsis.queryspec.QuerySpec;
 import io.katharsis.repository.ResourceRepositoryBase;
 import io.katharsis.resource.list.ResourceList;
 
-public class DefaultRepository<T> extends ResourceRepositoryBase<T, String> {
+import java.util.HashMap;
+import java.util.Map;
+
+public class DefaultRepository<T extends DefaultTable> extends ResourceRepositoryBase<T, Long> {
+    private Map<Long, T> repository;
+
     protected DefaultRepository(Class<T> resourceClass) {
         super(resourceClass);
+        repository = new HashMap<Long, T>();
     }
 
     @Override
     public <S extends T> S save(S resource) {
-        return super.save(resource);
+        repository.put(resource.getId(), resource);
+        return resource;
     }
 
     @Override
-    public void delete(String id) {
-        super.delete(id);
+    public void delete(Long id) {
+        repository.remove(id);
     }
 
     public ResourceList<T> findAll(QuerySpec querySpec) {
-        return null;
+        return querySpec.apply(repository.values());
     }
 }
