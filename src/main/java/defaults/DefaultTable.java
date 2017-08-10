@@ -1,8 +1,8 @@
-package resources;
+package defaults;
 
 import io.katharsis.resource.annotations.JsonApiId;
 
-public class BaseTable {
+public class DefaultTable {
     @JsonApiId
     private long id;
 

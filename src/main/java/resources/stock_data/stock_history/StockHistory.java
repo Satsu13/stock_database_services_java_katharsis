@@ -1,6 +1,6 @@
 package resources.stock_data.stock_history;
 
-import resources.BaseTable;
+import defaults.DefaultTable;
 import io.katharsis.resource.annotations.JsonApiRelation;
 import io.katharsis.resource.annotations.JsonApiResource;
 import io.katharsis.resource.annotations.LookupIncludeBehavior;
@@ -10,7 +10,7 @@ import resources.stock_data.stock_day.StockDay;
 import java.util.List;
 
 @JsonApiResource(type = "stock-histories")
-public class StockHistory extends BaseTable {
+public class StockHistory extends DefaultTable {
     private String ticker;
 
     @JsonApiRelation(lookUp = LookupIncludeBehavior.AUTOMATICALLY_WHEN_NULL, serialize = SerializeType.EAGER)

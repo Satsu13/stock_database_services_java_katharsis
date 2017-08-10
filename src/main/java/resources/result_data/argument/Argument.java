@@ -1,8 +1,8 @@
 package resources.result_data.argument;
 
-import resources.BaseTable;
+import defaults.DefaultTable;
 import io.katharsis.resource.annotations.JsonApiResource;
 
 @JsonApiResource(type = "arguments")
-public class Argument extends BaseTable {
+public class Argument extends DefaultTable {
 }

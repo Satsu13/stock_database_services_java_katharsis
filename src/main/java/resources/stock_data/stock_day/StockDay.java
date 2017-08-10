@@ -1,6 +1,6 @@
 package resources.stock_data.stock_day;
 
-import resources.BaseTable;
+import defaults.DefaultTable;
 import io.katharsis.resource.annotations.JsonApiRelation;
 import io.katharsis.resource.annotations.JsonApiResource;
 import io.katharsis.resource.annotations.LookupIncludeBehavior;
@@ -8,7 +8,7 @@ import io.katharsis.resource.annotations.SerializeType;
 import resources.stock_data.stock_history.StockHistory;
 
 @JsonApiResource(type = "stock-days")
-public class StockDay extends BaseTable {
+public class StockDay extends DefaultTable {
     private Double value;
     private String date;
 

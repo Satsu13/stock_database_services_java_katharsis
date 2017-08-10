@@ -1,8 +1,8 @@
 package resources.data.parameter;
 
-import resources.BaseTable;
+import defaults.DefaultTable;
 import io.katharsis.resource.annotations.JsonApiResource;
 
 @JsonApiResource(type = "parameters")
-public class Parameter extends BaseTable {
+public class Parameter extends DefaultTable {
 }
