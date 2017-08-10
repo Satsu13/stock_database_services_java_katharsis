@@ -1,10 +1,11 @@
-package resources.stock_data;
+package resources.stock_data.stock_history;
 
 import resources.BaseTable;
 import io.katharsis.resource.annotations.JsonApiRelation;
 import io.katharsis.resource.annotations.JsonApiResource;
 import io.katharsis.resource.annotations.LookupIncludeBehavior;
 import io.katharsis.resource.annotations.SerializeType;
+import resources.stock_data.stock_day.StockDay;
 
 import java.util.List;
 

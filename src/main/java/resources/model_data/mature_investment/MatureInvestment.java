@@ -1,4 +1,4 @@
-package resources.model_data;
+package resources.model_data.mature_investment;
 
 import resources.BaseTable;
 import io.katharsis.resource.annotations.JsonApiResource;

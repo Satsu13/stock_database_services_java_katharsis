@@ -1,4 +1,4 @@
-package resources.result_data;
+package resources.result_data.simulation;
 
 import resources.BaseTable;
 import io.katharsis.resource.annotations.JsonApiResource;
