@@ -4,12 +4,15 @@ import io.katharsis.client.KatharsisClient;
 import io.katharsis.queryspec.QuerySpec;
 import io.katharsis.repository.ResourceRepositoryV2;
 import org.junit.Test;
+import resources.ResourceTest;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.function.Supplier;
 
 import static org.junit.Assert.assertNotEquals;
 
-public class StockDayTest {
+public class StockDayTest extends ResourceTest<StockDay> {
 
     @Test
     public void testName() throws Exception {
@@ -18,5 +21,17 @@ public class StockDayTest {
         QuerySpec querySpec = new QuerySpec(StockDay.class);
         List<StockDay> days = repo.findAll(querySpec);
         assertNotEquals(0, days.size());
+    }
+
+    @Override
+    protected Class<StockDay> getResourceClass() {
+        return StockDay.class;
+    }
+
+    @Override
+    protected List<Supplier> getRelationships(StockDay resource) {
+        return Arrays.asList(
+                resource::getStockHistory
+        );
     }
 }
