@@ -13,7 +13,7 @@ public class StockDayTest {
 
     @Test
     public void testName() throws Exception {
-        KatharsisClient client = new KatharsisClient("http://192.168.99.100:3000/stock-histories/1");
+        KatharsisClient client = new KatharsisClient("http://192.168.99.100:3000/stockHistories/1");
         ResourceRepositoryV2<StockDay, Long> repo = client.getRepositoryForType(StockDay.class);
         QuerySpec querySpec = new QuerySpec(StockDay.class);
         List<StockDay> days = repo.findAll(querySpec);

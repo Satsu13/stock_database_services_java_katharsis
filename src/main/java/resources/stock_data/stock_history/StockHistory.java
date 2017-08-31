@@ -9,7 +9,7 @@ import resources.stock_data.stock_day.StockDay;
 
 import java.util.List;
 
-@JsonApiResource(type = "stock-histories")
+@JsonApiResource(type = "stockHistories")
 public class StockHistory extends DefaultTable {
     private String ticker;
 
