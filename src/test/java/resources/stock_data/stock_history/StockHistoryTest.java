@@ -28,9 +28,16 @@ public class StockHistoryTest extends ResourceTest<StockHistory> {
     }
 
     @Override
-    protected List<Supplier> getRelationships(StockHistory resource) {
+    protected List<Supplier> getNotNullRelationships(StockHistory resource) {
         return Collections.singletonList(
                 resource::getStockDays
+        );
+    }
+
+    @Override
+    protected List<Supplier> getNotNullData(StockHistory resource) {
+        return Collections.singletonList(
+                resource::getTicker
         );
     }
 }

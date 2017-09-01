@@ -30,20 +30,29 @@ public abstract class ResourceTest<T> {
     protected abstract Class<T> getResourceClass();
 
     @Test
-    public void testRelationships() throws Exception {
+    public void testNotNullRelationships() throws Exception {
         for (T resource : resources) {
-            testRelationshipsOnResource(resource);
+            List<Supplier> relationships = getNotNullRelationships(resource);
+            assertResultsNotNull(relationships);
         }
     }
 
-    private void testRelationshipsOnResource(T resource) {
-        List<Supplier> relationships = getRelationships(resource);
+    protected abstract List<Supplier> getNotNullRelationships(T resource);
 
-        for (Supplier relationship : relationships) {
-            Object manifestation = relationship.get();
-            assertNotNull(manifestation);
+    @Test
+    public void testData() throws Exception {
+        for (T resource : resources) {
+            List<Supplier> data = getNotNullData(resource);
+            assertResultsNotNull(data);
         }
     }
 
-    protected abstract List<Supplier> getRelationships(T resource);
+    protected abstract List<Supplier> getNotNullData(T resource);
+
+    private void assertResultsNotNull(List<Supplier> suppliers) {
+        for (Supplier supplier : suppliers) {
+            Object result = supplier.get();
+            assertNotNull(result);
+        }
+    }
 }

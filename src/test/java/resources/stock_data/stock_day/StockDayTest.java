@@ -29,9 +29,17 @@ public class StockDayTest extends ResourceTest<StockDay> {
     }
 
     @Override
-    protected List<Supplier> getRelationships(StockDay resource) {
+    protected List<Supplier> getNotNullRelationships(StockDay resource) {
         return Arrays.asList(
                 resource::getStockHistory
+        );
+    }
+
+    @Override
+    protected List<Supplier> getNotNullData(StockDay resource) {
+        return Arrays.asList(
+                resource::getValue,
+                resource::getDate
         );
     }
 }
